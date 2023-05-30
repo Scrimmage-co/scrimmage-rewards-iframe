@@ -1,0 +1,75 @@
+:root {
+    --scrimmage-widget-background: #111216;
+    --scrimmage-widget-background-active: #1e1e24;
+    --scrimmage-widget-text: #fff;
+}
+
+.scrimmage-widget-container {
+    position: fixed;
+    bottom: 20px;
+    right: min(20px, 1vw);
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.scrimmage-widget-fab {
+    background-color: var(--scrimmage-widget-background);
+    color: var(--scrimmage-widget-text);
+    border-radius: 50%;
+    width: 56px;
+    height: 56px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    transition: all 0.3s ease-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.scrimmage-widget-fab:hover {
+    background-color: var(--scrimmage-widget-background-active);
+}
+
+.scrimmage-widget-fab:active {
+    background-color: var(--scrimmage-widget-background-active);
+}
+
+.scrimmage-widget-fab:focus {
+    outline: none;
+}
+
+.fab-active-content {
+    display: none;
+}
+
+.scrimmage-widget-container.open .fab-stale-content {
+    display: none;
+}
+
+.scrimmage-widget-container.open .fab-active-content {
+    display: block;
+}
+
+.scrimmage-widget-frame {
+    display: none;
+}
+
+.scrimmage-widget-frame iframe {
+    width: min(380px, 98vw);
+    height: min(640px, 100vh - 100px);
+    border: none;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
+}
+
+.scrimmage-widget-container.open .scrimmage-widget-frame {
+    display: block;
+}
+
+
