@@ -6,6 +6,11 @@ window.addEventListener('load', async () => {
   await setWidgetLink();
 });
 
+window.addEventListener('message', (event) => {
+  // Handle message from widget here
+  console.log('message', event);
+});
+
 const setWidgetLink = async () => {
   const backendUrl = 'https://us-central1-bright-practice-331514.cloudfunctions.net/requestGenerateAuthInfo';
   const { token } = await fetch(backendUrl).then((response) => response.json());
